@@ -1,10 +1,10 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from './components/Login';
-import Register from './components/Register';
-import Dashboard from './components/Dashboard';
-import NoPage from './components/NoPage';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import NoPage from './pages/NoPage';
 
 function App() {
   const [user, setUser] = useState(null);
