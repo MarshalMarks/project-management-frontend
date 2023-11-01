@@ -17,9 +17,9 @@ function App() {
         <Route path="/" element={<Dashboard/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
-        <Route path="/user" element={<Profile/>} />
-        <Route path="/project" element={<ProjectDashboard/>} />
-        <Route path="/*" element={<NoPage/>} />
+        <Route path="/user/:userId" element={<Profile/>} />
+        <Route path="/project/:projectId" element={<ProjectDashboard/>} />
+        <Route path="*" element={<NoPage/>} />
       </Routes>
     </BrowserRouter>
   );
