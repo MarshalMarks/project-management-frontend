@@ -1,4 +1,7 @@
+import { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { auth, registerWithEmailAndPassword } from "../services/firebase"
 
 function Register() {
     return (

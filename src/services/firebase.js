@@ -1,5 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { 
+    getAuth, 
+    signInWithEmailAndPassword, 
+    createUserWithEmailAndPassword, 
+    sendPasswordResetEmail,
+    signOut 
+} from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCT4mQRh2L_EN3tQVOUoQH-K72Aq7o2vmc",
@@ -11,6 +17,46 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-export const auth = getAuth(app);
-export default app;
+const logInWithEmailAndPassword = async (email, password) => {
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+    } catch (err) {
+        console.error(err);
+        alert(err.message);
+    }
+};
+
+const registerWithEmailAndPassword = async (name, email, password) => {
+    try {
+        const res = await createUserWithEmailAndPassword(auth, email, password);
+        return res.user;
+    } catch (err) {
+        console.error(err);
+        alert(err.message);
+        return null;
+    }
+};
+
+const sendPasswordReset = async (email) => {
+    try {
+        await sendPasswordResetEmail(auth, email);
+        alert("Password reset link sent!");
+    } catch (err) {
+        console.error(err);
+        alert(err.message);
+    }
+};
+
+const logout = () => {
+    signOut(auth);
+};
+
+export {
+    auth,
+    logInWithEmailAndPassword,
+    registerWithEmailAndPassword,
+    sendPasswordReset,
+    logout
+};
