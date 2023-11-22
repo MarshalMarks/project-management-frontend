@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import { auth, logInWithEmailAndPassword } from "../services/firebase"
 
-function Login() {
+function Login(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
   
