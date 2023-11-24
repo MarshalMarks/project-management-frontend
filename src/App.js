@@ -7,16 +7,21 @@ import Dashboard from './pages/Dashboard';
 import NoPage from './pages/NoPage';
 import ProjectDashboard from './pages/ProjectDashboard';
 import Profile from './pages/Profile';
+import { useUser } from "./services/useUser";
+import { getAuth } from "firebase/auth";
+import { HeaderBar } from './components/HeaderBar';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const { user, isLoading } = useUser();
+
+  console.log(getAuth());
 
   // If the user is not logged in, redirect to login
   if(!user) {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login setUser={setUser}/>} />
+          <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="*" element={<Navigate to="/login"/>} />
         </Routes>
@@ -26,16 +31,19 @@ function App() {
 
   // If the user is logged in, show pages
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Dashboard/>} />
-        <Route path="/login" element={<Navigate to="/"/>} />
-        <Route path="/register" element={<Navigate to="/"/>} />
-        <Route path="/user/:userId" element={<Profile/>} />
-        <Route path="/project/:projectId" element={<ProjectDashboard/>} />
-        <Route path="*" element={<NoPage/>} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <HeaderBar/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard/>} />
+          <Route path="/login" element={<Navigate to="/"/>} />
+          <Route path="/register" element={<Navigate to="/"/>} />
+          <Route path="/user/:userId" element={<Profile/>} />
+          <Route path="/project/:projectId" element={<ProjectDashboard/>} />
+          <Route path="*" element={<NoPage/>} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
