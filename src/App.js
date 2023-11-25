@@ -14,8 +14,6 @@ import { HeaderBar } from './components/HeaderBar';
 function App() {
   const { user, isLoading } = useUser();
 
-  console.log(getAuth());
-
   // If the user is not logged in, redirect to login
   if(!user) {
     return (
@@ -32,8 +30,8 @@ function App() {
   // If the user is logged in, show pages
   return (
     <>
-      <HeaderBar/>
       <BrowserRouter>
+        <HeaderBar/>
         <Routes>
           <Route path="/" element={<Dashboard/>} />
           <Route path="/login" element={<Navigate to="/"/>} />

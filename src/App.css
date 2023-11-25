@@ -1,43 +1,127 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+html, body {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f2f2f2;
+  overflow-y: scroll;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-family: "Lexend";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+}
+
+.center input {
+  background-color: white;
+  height: 2rem;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid #303030;
+  margin-bottom: 1rem;
+}
+
+.center button {
+  height: 3rem;
+  border: none;
+  border-radius: 0;
+  background-color: #101010;
   color: white;
+  font-size: 1rem;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.5);
+  transition: 0.15s;
 }
 
-.App-link {
-  color: #61dafb;
+.center button:hover {
+  background-color: #555555;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 0.08s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.center p {
+  text-align: center;
+  margin-top: 1.6rem;
+  margin-bottom: 0;
 }
 
-.form {
+.headerBar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  position: sticky;
+  background-color: white;
+  top: 0;
+  height: 4rem;
+  color: black;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+}
+
+.headerBar button {
+  border: none;
+  background-color: white;
+  width: 4rem;
+}
+
+.headerBar button:hover {
+  border: none;
+  background-color: #d1d1d1;
+  cursor: pointer;
+  transition: 0.08s;
+}
+
+.headerBar FontAwesomeIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.headerBar div {
+  flex: 1;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(30rem, 1fr) );
+  grid-auto-rows: max-content;
+  grid-gap: 2rem;
+  margin: 0;
+  padding: 2rem;
+  list-style: none;
+}
+
+.projectCard {
+  height: 18rem;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  transition: 0.15s;
+}
+
+.projectCard h1 {
+  margin-bottom: 6px;
+}
+
+.projectCard h4 {
+  margin-top: 6px;
+}
+
+.projectCard:hover {
+  background-color: #d1d1d1;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 0.08s;
 }
