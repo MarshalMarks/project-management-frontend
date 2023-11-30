@@ -8,8 +8,8 @@ function HeaderBar() {
 
     const profileClick = async () => {
         try {
-            navigate("/user/3");
-            console.log("User profile opened successfully!");
+            navigate("/profile");
+            console.log("Profile page opened successfully!");
         } catch (error) {
             console.error('Error navigating to the profile page:', error.message);
         }

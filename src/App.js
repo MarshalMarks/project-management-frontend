@@ -36,7 +36,7 @@ function App() {
           <Route path="/" element={<Dashboard/>} />
           <Route path="/login" element={<Navigate to="/"/>} />
           <Route path="/register" element={<Navigate to="/"/>} />
-          <Route path="/user/:userId" element={<Profile/>} />
+          <Route path="/profile" element={<Profile/>} />
           <Route path="/project/:projectId" element={<ProjectDashboard/>} />
           <Route path="*" element={<NoPage/>} />
         </Routes>
