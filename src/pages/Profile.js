@@ -19,9 +19,11 @@ function Profile() {
     const userObject = getUserInfo(getAuth());
 
     return (
-        <div>
+        <div className="profileContent">
+            <h3>Current User</h3>
+            <hr></hr>
             <h1>{userObject.firstName} {userObject.lastName}</h1>
-            <h2>{userObject.email}</h2>
+            <h1>{userObject.email}</h1>
         </div>
     );
 }

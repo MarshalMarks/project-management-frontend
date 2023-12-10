@@ -3,6 +3,7 @@ import { ProjectCard } from "../components/ProjectCard"
 function getProjects() {
     // TODO: return list of a user's projects
     return [
+        <ProjectCard name="Create New Project" projectID={-1} firstName="" lastName="" desc=""/>,
         <ProjectCard name="Project 1" projectID={1} firstName="Clay" lastName="Marks" desc="The first project ever made"/>,
         <ProjectCard name="Project 2" projectID={2} firstName="Slay" lastName="Marx" desc="The second project ever made"/>,
         <ProjectCard name="Project 3" projectID={3} firstName="Sway" lastName="Sharks" desc="The third project ever made"/>,
